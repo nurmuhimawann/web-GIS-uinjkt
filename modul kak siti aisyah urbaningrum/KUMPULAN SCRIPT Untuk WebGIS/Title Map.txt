@@ -1,0 +1,14 @@
+SCRIPT UNTUK TITLE (JUDUL PETA)
+
+
+//Title
+		var title = new L.Control();
+		title.onAdd = function (map) {
+		   this._div = L.DomUtil.create('div', 'info');
+		   this.update();
+		   return this._div;
+		};
+		title.update = function () {
+		   this._div.innerHTML = '<h2>Peta Sebaran Sekolah</h2>KABUPATEN INDRAMAYU'
+		};
+		title.addTo(map); 

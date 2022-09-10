@@ -1,0 +1,4 @@
+//Print
+		L.easyPrint({
+		   title: 'Print ke PDF'
+		}).addTo(map); 

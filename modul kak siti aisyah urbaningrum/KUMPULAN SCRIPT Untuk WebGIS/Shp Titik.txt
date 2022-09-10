@@ -1,0 +1,19 @@
+SHP BENTUK TITIK (MARKER)
+
+// Titik Sebaran Sekolah 
+var titiksekolah = L.geoJson(null, {
+   pointToLayer: function (feature, latlng) {
+      return L.marker(latlng, {
+         icon: L.icon({
+            iconUrl: "marker/titik_sekolah.png",
+            iconSize: [44, 44],
+            iconAnchor: [12, 28],
+            popupAnchor: [0, -25]
+         })
+      });
+   }
+});
+$.getJSON("Jalan dan Sungai/Sekolah_IM.geojson", function (data) {
+   titiksekolah.addData(data);
+   map.addLayer(titiksekolah);
+});

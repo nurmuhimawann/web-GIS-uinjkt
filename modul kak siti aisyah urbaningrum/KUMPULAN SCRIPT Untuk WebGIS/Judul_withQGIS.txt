@@ -1,0 +1,8 @@
+//Judul (Tulisan Gerak) 
+
+<div style="background: red; border: 1px solid #FF0000; color: blackt-size: 20px; font-weight: bold; 
+letter-spacing: 0.5em; padding: 10px;">
+
+<marquee direction="left" scrollamount="6" align="center">Tuliskan Judul Peta</marquee>
+
+</div> 

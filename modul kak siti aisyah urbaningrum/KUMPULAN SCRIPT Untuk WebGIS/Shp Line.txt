@@ -1,0 +1,16 @@
+SCRIPT UNTUK POIGON LINE
+
+// Jalan
+		var jalanutama = L.geoJson(null, {
+		   style: function (feature) {
+			  return {
+				 color: "yellow",
+				 weight: 2,
+				 opacity: 1
+			  };
+		   }
+		});
+		$.getJSON("Jalan dan Sungai/Jalan_IM.geojson", function (data) {
+		   jalanutama.addData(data);
+		   map.addLayer(jalanutama);
+		});

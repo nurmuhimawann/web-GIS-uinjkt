@@ -1,0 +1,11 @@
+//Pasword 
+
+	var password;
+	
+        var pass1="geouin";
+	
+        password=prompt('Masukkan Password Untuk Membuka Halaman Ini!',' ');
+	
+        if (password==pass1) alert('Password Benar!,Selamat! Klik OK untuk menuju halaman');
+	
+        else {window.location="http://sodikin-mangroveruinjkt.com";}

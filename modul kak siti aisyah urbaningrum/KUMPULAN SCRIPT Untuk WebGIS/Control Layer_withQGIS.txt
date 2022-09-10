@@ -1,0 +1,16 @@
+//control Layer
+	 
+ 
+var baseMaps = {
+   
+'Google Terrain': basemap1,
+   
+'Google Satellite':basemap2,
+   
+'Google Hybride': basemap3
+
+};
+
+var layerControl = L.control.layers(baseMaps);
+
+layerControl.addTo(map); 

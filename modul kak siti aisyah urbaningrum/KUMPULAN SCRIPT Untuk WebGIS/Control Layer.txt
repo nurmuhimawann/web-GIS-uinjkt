@@ -1,0 +1,17 @@
+CONTROL LAYER 
+
+//control Layer
+
+	  var baseMaps = {
+   'Google Terrain': basemap0,
+   'Google Satellite':basemap1,
+   'Google Hybride': basemap2
+};
+var Layers = {
+'Batas Administrasi':adminkab,
+'jalan':jalanutama,
+'Sekolah':titiksekolah
+
+};
+var layerControl = L.control.layers(baseMaps, Layers, {collapsed:false});
+layerControl.addTo(map); 

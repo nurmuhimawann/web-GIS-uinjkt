@@ -1,0 +1,5 @@
+//scale bar
+	L.control.betterscale({
+	   metric: true,
+	   imperial: false
+	}).addTo(map);

@@ -1,0 +1,38 @@
+SCRIPT UNTUK SHP POLIGON
+
+
+//Layer Admin Kab INDRAMAYU
+	  var adminkab = L.geoJson(null, {
+   style: function (feature) {
+      return {
+         fillColor: "blue",
+         fillOpacity: 0.7,
+         color: "black",
+         weight: 1,
+         opacity: 1
+      };
+   }, 
+   onEachFeature: function (feature, layer) {
+   layer.on({
+      mouseover: function (e) {
+         var layer = e.target;
+         layer.setStyle({
+            weight: 2,
+            color: "yellow",
+            opacity: 1,
+            fillColor: "yellow",
+            fillOpacity: 1
+         });
+         adminkab.bindPopup(feature.properties.KABUPATEN);
+      },
+      mouseout: function (e) {
+         adminkab.resetStyle(e.target);
+         map.closePopup();
+      }
+   });
+} 
+});
+$.getJSON("data/admin_kab_indramayu.geojson", function (data) {
+   adminkab.addData(data);
+   map.addLayer(adminkab);
+}); 		   

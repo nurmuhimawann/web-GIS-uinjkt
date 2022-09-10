@@ -1,0 +1,65 @@
+SKRIP UNTUK BASEMAP
+
+
+<DOCTYPE! html>
+<html>
+<head>
+<title>Latihan_LSPGEOSPASIAL</title>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1,width=device-width">
+<link rel="stylesheet" href="http://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
+<script src="
+http://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<link rel="stylesheet" href="plugins/betterscale/L.Control.BetterScale.css" />
+<script src="plugins/betterscale/L.Control.BetterScale.js"></script> 
+<link rel="stylesheet" href="plugins/search/leaflet-search.css" />
+<script src="plugins/search/leaflet-search.js"></script> 
+<link rel="stylesheet" href="plugins/easyprint/easyPrint.css" />
+<script src="plugins/easyprint/leaflet.easyPrint.js"></script> 
+<style>
+   html, body, #map {
+     height: 100%;
+     width: 100%;
+     margin: 0px;
+   }
+   .info {
+   padding: 6px 8px;
+   font: 14px/16px Arial, Helvetica, sans-serif;
+   background: white;
+   background: rgba(255,255,255,0.8);
+   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+   border-radius: 5px;
+}
+.info h2 {
+   margin: 0 0 5px;
+   color: #777;
+} 
+</style> 
+</head>
+<body>
+<div id="map"></div>
+	<script>
+//SetView	
+	   var map = L.map('map').setView([-6.48,108.18],10);
+	   
+//Basemap
+	var basemap0 = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+	   maxZoom: 20,
+	   subdomains:['mt0','mt1','mt2','mt3'],
+	   attribution: 'Google Terrain'
+	}); 
+	var basemap1 = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+	   maxZoom: 20,
+	   subdomains:['mt0','mt1','mt2','mt3'],
+	   attribution: 'Google Satellite'
+	});
+	var basemap2 = L.tileLayer('http://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+	   maxZoom: 20,
+	   subdomains:['mt0','mt1','mt2','mt3'],
+	   attribution: 'Google Hybrid'
+	}); 
+		   basemap2.addTo(map);
+			   	</script> 
+</body>
+</html>

@@ -1,0 +1,21 @@
+// Search
+		var searchControl = new L.Control.Search({
+		   layer: adminkab,
+		   propertyName: 'KECAMATAN',
+		   marker: false,
+		   moveToLocation: function(latlng, title, map) {
+			  var zoom = map.getBoundsZoom(latlng.layer.getBounds());
+			  map.setView(latlng, zoom);
+		   }
+		});
+		searchControl.on('search:locationfound', function(e) {
+		   e.layer.setStyle({
+			  fillColor: 'yellow',
+			  color: 'red'
+		   });
+		}).on('search:collapsed', function(e) {
+		   featuresLayer.eachLayer(function(layer) {
+			  featuresLayer.resetStyle(layer);
+		   });
+		});
+		map.addControl(searchControl); 
